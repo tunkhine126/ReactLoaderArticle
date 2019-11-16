@@ -7,6 +7,8 @@ The demo app can be found [here](https://reactloaderdemo.firebaseapp.com/)
 ## Framework and Libraries
 
 [React](https://reactjs.org/)
+
 [react-loading](https://www.npmjs.com/package/react-loading)
+
 [Bootstrap NavBar](https://react-bootstrap.github.io/components/navbar/)
 
