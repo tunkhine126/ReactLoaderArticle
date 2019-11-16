@@ -4,11 +4,12 @@ The accompanying article can be found on [Medium](https://medium.com/@tunkhine12
 
 The demo app can be found [here](https://reactloaderdemo.firebaseapp.com/)
 
-## Framework and Libraries
+## Framework
+[React](https://reactjs.org/) 
 
-[React](https://reactjs.org/)
-
-[react-loading](https://www.npmjs.com/package/react-loading)
+## Libraries
+[React-loading](https://www.npmjs.com/package/react-loading)
 
 [Bootstrap NavBar](https://react-bootstrap.github.io/components/navbar/)
 
+[REQ|RES](https://reqres.in/) A fully hosted REST-API to test your front end. 
