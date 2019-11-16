@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import SomeComponent from './someComponent'
+import ReactLoading from 'react-loading'
+import Navigation from './NavigationBar'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const someAPI = 'https://jsonplaceholder.typicode.com/posts'
+
+class App extends Component {
+
+  state = {
+    someData: [],
+    isLoading: true
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.someFetch()
+    }, 1200);
+  }
+
+  someFetch = () => {
+    fetch(someAPI)
+      .then(res => res.json())
+      .then(res => this.setState({ 
+        someData: res,
+        isLoading: false })
+    )
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Navigation />
+        <header className="App-header">
+          {this.state.isLoading ? (
+            <div>
+              <ReactLoading type={"bars"} color={"grey"} />
+            </div> 
+            ) : (
+            <SomeComponent />
+            )
+          }
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
